@@ -1,0 +1,18 @@
+<mat-toolbar color="primary">
+  <span>{{brand}}</span>
+
+  <div class="user-toolbar align-right">
+    <a mat-button [matMenuTriggerFor]="userMenu">
+      <img src="http://code-love.tk/demoblog/assets/img/authors/carmen.jpg" class="profile-pic rounded-circle">
+      <span class="user-name">{{userName}}</span>
+      <mat-icon>expand_more</mat-icon>
+    </a>
+    <mat-menu #userMenu="matMenu">
+      <button mat-menu-item><mat-icon>account_circle</mat-icon> <span>My Profile</span></button>
+      <button mat-menu-item><mat-icon>exit_to_app</mat-icon> <span>Logout</span></button>
+    </mat-menu>
+  </div>
+</mat-toolbar>
+
+
+
