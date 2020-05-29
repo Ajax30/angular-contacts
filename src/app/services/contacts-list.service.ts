@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { pipe } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 import { Contact } from '../models/Contact';
@@ -18,7 +17,7 @@ const httpOptions = {
 
 export class ContactsListService {
 
-  contactsUrl = 'https://randomuser.me/api/?&results=20&inc=name,location,email,cell,picture';
+  contactsUrl = 'https://randomuser.me/api/?&results=200&inc=name,location,email,cell,picture';
 
   constructor(private http:HttpClient) { }
 

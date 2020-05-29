@@ -1,0 +1,7 @@
+@include media-breakpoint('lt-lg') {
+  .nav {
+      &.horizontal {
+          flex-direction: column;
+      }
+  }
+}

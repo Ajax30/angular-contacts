@@ -3,10 +3,58 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
+/* Layout */
+app-root > div {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+app-footer {
+    margin-top: auto;
+}
+
 .container {
     max-width: 1366px;
     margin: 0 auto;
 }
+
+/*Width*/
+.w-100 {
+    width: 100%;
+}
+
+.w-50 {
+    width: 50%;
+}
+
+.w-25 {
+    width: 25%;
+}
+
+/*Margin classes*/
+
+.mt-15,
+.my-15 {
+    margin-top: 15px !important;
+};
+
+.mb-15,
+.my-15 {
+    margin-bottom: 15px !important;
+};
+
+/*Padding classes*/
+
+.pt-15,
+.py-15 {
+    padding-top: 15px !important;
+};
+
+.pb-15,
+.py-15 {
+    padding-bottom: 15px !important;
+};
 
 /*Alignment classes*/
 
@@ -28,6 +76,15 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     border-radius: 50%!important;
 }
 
+.thumbnail {
+    padding: 2px;
+    line-height: 1;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    height: 40px;
+    width: auto;
+}
+
 /*User*/
 
 #mat-menu-panel-0 {
@@ -46,15 +103,26 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     border: 2px solid #fff;
 }
 
-/*Catds*/
-.mat-card {
-    width: 100%;
-    height: 90%
+/*Tables*/
+
+.table-responsive {
+    overflow-x: auto;
 }
 
-.mat-card-title {
-    font-size: 16px;
+table .mat-header-cell {
+    font-size: 14px;
+    font-weight: bold;
 }
 
+table .mat-cell {
+    padding-top: 2px !important;
+    padding-bottom: 2px !important;
+}
+
+
+table .mat-cell a {
+    text-decoration: none;
+    color: #069;
+}
 
 

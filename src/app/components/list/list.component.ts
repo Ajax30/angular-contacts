@@ -1,4 +1,6 @@
-import { Component, OnInit, VERSION, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatTableDataSource } from '@angular/material/table';
+import { MatPaginator } from '@angular/material/paginator';
 import { from } from 'rxjs';
 import { ContactsListService } from '../../services/contacts-list.service';
 import { Contact } from '../../models/Contact';
@@ -14,42 +16,23 @@ export class ListComponent implements OnInit {
 
   contactsList:Contact[];
 
-  ngVersion: string = VERSION.full;
-  matVersion: string = '5.1.0';
-  columns: number;
-
   constructor(private ContactsListService:ContactsListService) { }
 
-   // Cards
-   breakPoints() {
-    switch(true) {
-        case (window.innerWidth <= 480):
-          this.columns = 1;
-          break;
-        case (window.innerWidth > 480 && window.innerWidth <= 640):
-          this.columns = 2;
-          break;
-        case (window.innerWidth > 640 && window.innerWidth <= 992):
-            this.columns = 3;
-            break;
-        default:
-          this.columns = 5;
-      }
-    }
+  contactsTableData: MatTableDataSource<any>;
+  displayedColumns: string[] = ['fullName', 'photo', 'email', 'phone', 'city', 'country'];
+
+  @ViewChild(MatPaginator) paginator: MatPaginator;
 
   ngOnInit(): void  {
     // Contact list
     this.ContactsListService.getContcts().subscribe(
-      contactsList => { this.contactsList = contactsList },
+      contactsList => { 
+        this.contactsList = contactsList;
+        this.contactsTableData = new MatTableDataSource(contactsList);
+        this.contactsTableData.paginator = this.paginator;
+      },
       error => { }
     );
-
-    this.breakPoints();
-
-  }
-
-  onResize(event) {
-    this.breakPoints();
   }
 
 }
