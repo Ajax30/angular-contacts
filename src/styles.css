@@ -79,6 +79,17 @@ app-footer {
     width: auto;
 }
 
+/* Buttons */
+
+.mat-fab {
+    width: 46px !important;
+    height: 46px !important;
+}
+
+.mat-fab .mat-button-wrapper {
+    padding: 10px 0 !important;
+}
+
 /*User*/
 
 #mat-menu-panel-0 {

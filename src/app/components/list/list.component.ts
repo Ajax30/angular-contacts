@@ -28,7 +28,7 @@ export class ListComponent implements OnInit {
 
   contactsTableData: MatTableDataSource<any>;
 
-  displayedColumns: string[] = ['fullName', 'photo', 'email', 'phone', 'city', 'country'];
+  displayedColumns: string[] = ['fullName', 'photo', 'email', 'phone', 'city', 'country', 'actions'];
 
   searchContact = this.fb.group({});
 
