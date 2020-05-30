@@ -102,27 +102,3 @@ app-footer {
     height: 38px;
     border: 2px solid #fff;
 }
-
-/*Tables*/
-
-.table-responsive {
-    overflow-x: auto;
-}
-
-table .mat-header-cell {
-    font-size: 14px;
-    font-weight: bold;
-}
-
-table .mat-cell {
-    padding-top: 2px !important;
-    padding-bottom: 2px !important;
-}
-
-
-table .mat-cell a {
-    text-decoration: none;
-    color: #069;
-}
-
-

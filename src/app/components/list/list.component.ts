@@ -1,13 +1,19 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import {FormGroup, FormBuilder, Validators} from "@angular/forms";
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { from } from 'rxjs';
 import { ContactsListService } from '../../services/contacts-list.service';
 import { Contact } from '../../models/Contact';
 
+export interface searchContact {
+  'search': string
+}
+
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
+  styleUrls: ['./list.component.css']
 })
 
 export class ListComponent implements OnInit {
@@ -16,10 +22,15 @@ export class ListComponent implements OnInit {
 
   contactsList:Contact[];
 
-  constructor(private ContactsListService:ContactsListService) { }
+  searchQuery: string;
+
+  constructor(private ContactsListService:ContactsListService, private fb: FormBuilder) { }
 
   contactsTableData: MatTableDataSource<any>;
+
   displayedColumns: string[] = ['fullName', 'photo', 'email', 'phone', 'city', 'country'];
+
+  searchContact = this.fb.group({});
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
@@ -33,6 +44,18 @@ export class ListComponent implements OnInit {
       },
       error => { }
     );
+
+    //Add the search box
+    this.searchContact.addControl('search', this.fb.control(''));
+  }
+  
+  clearSearch() {
+    this.searchQuery = "";
+    this.applyFilter();
+  }
+
+  applyFilter() {
+    this.contactsTableData.filter = this.searchQuery.trim().toLowerCase();
   }
 
 }
