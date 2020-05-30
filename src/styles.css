@@ -12,6 +12,7 @@ app-root > div {
 
 app-footer {
     margin-top: auto;
+    padding-top: 30px;
 }
 
 .container {
@@ -32,30 +33,6 @@ app-footer {
     width: 25%;
 }
 
-/*Margin classes*/
-
-.mt-15,
-.my-15 {
-    margin-top: 15px !important;
-};
-
-.mb-15,
-.my-15 {
-    margin-bottom: 15px !important;
-};
-
-/*Padding classes*/
-
-.pt-15,
-.py-15 {
-    padding-top: 15px !important;
-};
-
-.pb-15,
-.py-15 {
-    padding-bottom: 15px !important;
-};
-
 /*Alignment classes*/
 
 .align-left {
@@ -64,6 +41,23 @@ app-footer {
 
 .align-right {
     margin-left: auto;
+}
+
+.align-center {
+    margin-left: auto;
+    margin-left: auto;
+}
+
+.text-left {
+    justify-content: left;
+}
+
+.text-right {
+    justify-content: right;
+}
+
+.text-center {
+    justify-content: center;
 }
 
 .page-title {
